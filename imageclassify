@@ -9,8 +9,10 @@ data=pd.read_csv('mnist.csv')
 data.head()
 a=data.iloc[3,1:].values
 
-a=a.reshape(28,28).astype('unit8')
+a=a.reshape(28,28).astype('uint8')
 plt.imshow(a)
+
+data.fillna(data.mean(), inplace=True)
 
 df_x=data.iloc[:,1:]
 df_y=data.iloc[:,0]
